@@ -23,8 +23,9 @@ public class SpringBootDemoApplication {
 	@Bean
 	public CommandLineRunner demo(PostRepository repository) {
 		return (args) -> {
-			repository.save(new Post("Test", "Questo è un test"));
+			repository.save(new Post("Spring", "Questo è un test"));
 			repository.save(new Post("JAVAEE", "Powerful JavaEE"));
+			repository.save(new Post("Scala", "let's go functional"));
 			
 			log.info("Calling findAll");
 			for(Post p : repository.findAll()) {
